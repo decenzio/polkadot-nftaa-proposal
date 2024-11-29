@@ -1,26 +1,47 @@
-use crate::{mock::*, Error, Something};
-use frame_support::{assert_noop, assert_ok};
+use crate::{mock::*, types::CollectionConfigFor};
+use frame_support::assert_ok;
+use pallet_nfts::{
+    Collection, CollectionAccount, CollectionConfig, CollectionSettings, MintSettings,
+};
 use sp_runtime::AccountId32 as AccountId;
+
+type AccountIdOf<Test> = <Test as frame_system::Config>::AccountId;
 
 pub const ALICE: AccountId = AccountId::new([0u8; 32]);
 
-#[test]
-fn it_works_for_default_value() {
-    new_test_ext().execute_with(|| {
-        // Dispatch a signed extrinsic.
-        assert_ok!(NFTAA::do_something(RuntimeOrigin::signed(ALICE), 42));
-        // Read pallet storage and assert an expected result.
-        assert_eq!(Something::<Test>::get().map(|v| v.block_number), Some(42));
-    });
+fn account(id: u8) -> AccountIdOf<Test> {
+    [id; 32].into()
 }
 
+fn collection_config_with_all_settings_enabled() -> CollectionConfigFor<Test> {
+    CollectionConfig {
+        settings: CollectionSettings::all_enabled(),
+        max_supply: None,
+        mint_settings: MintSettings::default(),
+    }
+}
+
+// fn collections() -> Vec<(AccountIdOf<Test>, u32)> {
+//     let mut r: Vec<_> = CollectionAccount::<Test>::iter()
+//         .map(|x| (x.0, x.1))
+//         .collect();
+//     r.sort();
+//     let mut s: Vec<_> = Collection::<Test>::iter()
+//         .map(|x| (x.1.owner, x.0)) // Can't get owner from CollectionAccount as it's private
+//         .collect();
+//     s.sort();
+//     assert_eq!(r, s);
+//     r
+// }
+
 #[test]
-fn correct_error_for_none_value() {
+fn it_creates_collection() {
     new_test_ext().execute_with(|| {
-        // Ensure the expected error is thrown when no value is present.
-        assert_noop!(
-            NFTAA::cause_error(RuntimeOrigin::signed(ALICE)),
-            Error::<Test>::NoneValue
-        );
+        // Dispatch a signed extrinsic.
+        assert_ok!(NFTAA::create(
+            RuntimeOrigin::signed(ALICE),
+            ALICE,
+            collection_config_with_all_settings_enabled()
+        ));
     });
 }
