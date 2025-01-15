@@ -1,0 +1,3 @@
+[submodule "nftaa"]
+	path = nftaa
+	url = https://github.com/decenzio/nftaa.git
