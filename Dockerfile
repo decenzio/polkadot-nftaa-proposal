@@ -35,9 +35,6 @@ WORKDIR /usr/src/app/polkadot-sdk
 # Build the project
 RUN cargo b -r -p polkadot
 
-# Build parachain-template-node-two
-RUN cargo build --release -p parachain-template-node-two 
-
 # Build parachain-template-node
 RUN cargo build --release -p parachain-template-node
 
@@ -51,5 +48,5 @@ RUN wget https://github.com/paritytech/zombienet/releases/download/v1.3.116/zomb
 ENV BIND_INTERFACE=0.0.0.0
 
 # Launch zombienet
-CMD ["./zombienet-linux-x64", "-p", "native", "-c", "1", "spawn", "config-both-docker.toml"]
+CMD ["./zombienet-linux-x64", "-p", "native", "-c", "1", "spawn", "config.toml"]
 
