@@ -4,6 +4,7 @@ This is proposal for the NFTAA pallet
 
 ## How to run?
 
+### Docker
 For dockerized version you need to build image first using:
 
 ```sh
@@ -45,3 +46,10 @@ After that we can launch nodes with zombienet:
 cd binaries
 ./zombienet -p native -c 1 spawn config.toml
 ```
+
+Here’s an improved version of the text:
+
+---
+
+### App Interaction
+After launching, you can interact with the pallet using the following link: [Polkadot.js Explorer](https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9920#/explorer).
