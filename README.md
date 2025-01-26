@@ -48,4 +48,4 @@ cd binaries
 ```
 
 ### App Interaction
-After launching, you can interact with the pallet using the following link: [Polkadot.js Explorer](https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9920#/explorer).
+For now, you can interact with the pallet using the following link: [Polkadot.js Explorer](https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9920#/explorer). Later, interaction through a web app will also be possible.
