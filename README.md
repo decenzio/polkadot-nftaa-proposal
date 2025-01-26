@@ -1,6 +1,6 @@
 # NFTAA Proposal
 
-This is proposal for the NFTAA pallet. For more informations as same as required runtime configuration check [readme in pallet repo](https://github.com/decenzio/nftaa/blob/main/README.md).
+This is the proposal for the NFTAA pallet. For more information, as well as details on the required runtime configuration, please refer to the [README in the pallet repository](https://github.com/decenzio/nftaa/blob/main/README.md).
 
 ## How to run?
 
@@ -19,7 +19,7 @@ docker run --platform linux/x86_64 -p 9910-9913:9910-9913 -p 9920-9921:9920-9921
 
 ### Local development
 
-Alternatively for local development we recommend download fork of polkadot-sdk
+Alternatively for local development we recommend download our fork of polkadot-sdk
 
 ```sh
 git clone https://github.com/decenzio/polkadot-sdk.git --branch dev --recurse-submodules
