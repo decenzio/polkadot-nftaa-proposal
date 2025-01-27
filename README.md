@@ -61,7 +61,7 @@ Here is an example of the basic flow:
 3. Find the address of the created NFTAA in the event list.
 4. Using the same account as the NFTAA owner, use `proxy_call` to perform actions via the new NFTAA. For example, you can call `system remark`.
 5. Change to a random account (one that is not the NFTAA owner) and try step 4 again. You should encounter an error.
-6. Transfer the NFTAA (similar to transferring a standard NFT) to a new account. Then try step 4 from the old account; you should encounter an error.
+6. Transfer the NFTAA via `transfer` (similar to transferring a standard NFT) to a new account. Then try step 4 from the old account; you should encounter an error.
 7. Switch to the new owner of the NFTAA and retry step 4. This should work without any errors.
 
 ### Run Automatic Tests
