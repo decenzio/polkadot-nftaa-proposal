@@ -65,5 +65,17 @@ Here is an example of the basic flow:
 7. Switch to the new owner of the NFTAA and retry step 4. This should work without any errors.
 
 ### Run Automatic Tests
-To run automatic tests, you need to:
 
+To run automatic tests, follow these steps:
+
+1. Ensure you have the [`just` utility](https://github.com/casey/just) installed on your machine.
+
+2. Clone our `polkadot-sdk` fork along with its submodules:
+   ```sh
+   git clone https://github.com/decenzio/polkadot-sdk.git --branch dev --recurse-submodules
+   ```
+
+3. Navigate to the `polkadot-sdk` folder and run:
+   ```sh
+   just pallet-test
+   ```
