@@ -66,7 +66,7 @@ Here is an example of the basic flow:
 
 ### Run Automatic Tests
 
-<img width="684" alt="image" src="testing/nftaa-pallet-test.png"/>
+<img width="684" alt="image" src="testing/nftaa-pallet-test-cargo.png"/>
 
 
 To run automatic tests, follow these steps:
@@ -77,18 +77,12 @@ To run automatic tests, follow these steps:
    rustc 1.84.0 (9fc6b4312 2025-01-07)
    ```
 
-1. Ensure you have the [`just` utility](https://github.com/casey/just) installed on your machine.
-
-2. Clone our `polkadot-sdk` fork along with its submodules:
+1. Clone our `polkadot-sdk` fork along with its submodules:
    ```sh
    git clone https://github.com/decenzio/polkadot-sdk.git --branch dev --recurse-submodules
    ```
 
-3. Navigate to the `polkadot-sdk` folder and run:
-   ```sh
-   just pallet-test
-   ```
-   or alternatively it is possible to use:
+2. Navigate to the `polkadot-sdk` folder and run:
    ```sh
    cargo test -p pallet-nftaa
    ```
