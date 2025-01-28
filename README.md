@@ -66,6 +66,9 @@ Here is an example of the basic flow:
 
 ### Run Automatic Tests
 
+<img width="684" alt="image" src="testing/nftaa-pallet-test.png"/>
+
+
 To run automatic tests, follow these steps:
 
 0. Check your Rust version:
