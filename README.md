@@ -68,6 +68,12 @@ Here is an example of the basic flow:
 
 To run automatic tests, follow these steps:
 
+0. Check your Rust version:
+   ```sh
+   rustc --version           
+   rustc 1.84.0 (9fc6b4312 2025-01-07)
+   ```
+
 1. Ensure you have the [`just` utility](https://github.com/casey/just) installed on your machine.
 
 2. Clone our `polkadot-sdk` fork along with its submodules:
@@ -78,4 +84,21 @@ To run automatic tests, follow these steps:
 3. Navigate to the `polkadot-sdk` folder and run:
    ```sh
    just pallet-test
+   ```
+   or alternatively it is possible to use:
+   ```sh
+   cargo test -p pallet-nftaa
+   ```
+
+In case of problems, check the Rust version (point 0.) and use the following commands to update if necessary:
+
+   ```sh
+   rustup default stable
+   rustup update
+   rustup target add wasm32-unknown-unknown
+   ```
+
+   ```sh
+   rustup update nightly
+   rustup target add wasm32-unknown-unknown --toolchain nightly
    ```
