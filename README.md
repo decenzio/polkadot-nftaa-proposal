@@ -2,7 +2,7 @@
 
 This repository contains relevant resources, technical components, and documentation related to the Polkadot NFTAA proposal [submitted to the Web3 Foundation](https://github.com/w3f/Grants-Program/blob/master/applications/nftaa.md).
 The proposal aims to introduce the NFTAA pallet, enhancing the Polkadot ecosystem's NFT capabilities.
-For more information, as well as details on the required runtime configuration, please refer to the [README in the pallet repository](https://github.com/decenzio/pallet-nftaa/blob/main/README.md).
+For more information, as well as details on the required runtime configuration, please refer to the [README in the pallet repository](https://github.com/decenzio/pallet-nftaa).
 
 ## How to run?
 
