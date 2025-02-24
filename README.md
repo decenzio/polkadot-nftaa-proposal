@@ -1,6 +1,6 @@
 # NFTAA Proposal
 
-This is the proposal for the NFTAA pallet. For more information, as well as details on the required runtime configuration, please refer to the [README in the pallet repository](https://github.com/decenzio/nftaa/blob/main/README.md).
+This is the proposal for the NFTAA pallet. For more information, as well as details on the required runtime configuration, please refer to the [README in the pallet repository](https://github.com/decenzio/pallet-nftaa/blob/main/README.md).
 
 ## How to run?
 
