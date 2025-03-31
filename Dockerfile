@@ -42,7 +42,7 @@ RUN cargo build --release -p parachain-template-node
 WORKDIR /usr/src/app/polkadot-sdk/binaries
 
 # Download the latest zombienet image
-RUN wget https://github.com/paritytech/zombienet/releases/download/v1.3.116/zombienet-linux-x64 \
+RUN wget https://github.com/paritytech/zombienet/releases/download/v1.3.127/zombienet-linux-x64 \
     && chmod +x zombienet-linux-x64
 
 ENV BIND_INTERFACE=0.0.0.0
