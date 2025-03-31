@@ -1,5 +1,5 @@
 # Use the official Rust image as the base image
-FROM rust:latest
+FROM rust:1.84
 
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
@@ -22,7 +22,7 @@ RUN rustup component add rust-src --toolchain nightly
 WORKDIR /usr/src/app
 
 # Clone the repository
-RUN git clone https://github.com/decenzio/polkadot-sdk.git --branch dev --recurse-submodules
+RUN git clone https://github.com/decenzio/polkadot-sdk.git --depth 1 --branch 1.0.1 --recurse-submodules
 
 # Configure Cargo to use Git CLI
 RUN mkdir -p ~/.cargo && echo "[net]\ngit-fetch-with-cli = true" > ~/.cargo/config
