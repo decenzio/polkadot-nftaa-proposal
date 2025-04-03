@@ -10,13 +10,13 @@ For more information, as well as details on the required runtime configuration, 
 For dockerized version you need to build image first using:
 
 ```sh
-docker build --platform linux/x86_64 -t polkadot-sdk-image:latest .
+docker build --platform linux/amd64 -t polkadot-sdk-image:latest .
 ```
 
 And than run zombienet instance with:
 
 ```sh
-docker run --platform linux/x86_64 -p 9910-9913:9910-9913 -p 9920-9921:9920-9921 --rm -it polkadot-sdk-image:latest
+docker run --platform linux/amd64 -p 9910-9913:9910-9913 -p 9920-9921:9920-9921 --rm -it polkadot-sdk-image:latest
 ```
 
 ### Local development

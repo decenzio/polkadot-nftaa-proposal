@@ -32,9 +32,6 @@ ENV CARGO_HOME=~/.cargo
 # Change directory to Polkadot
 WORKDIR /usr/src/app/polkadot-sdk
 
-# Build the project
-RUN cargo b -r -p polkadot
-
 # Build parachain-template-node
 RUN cargo build --release -p parachain-template-node
 
@@ -44,6 +41,13 @@ WORKDIR /usr/src/app/polkadot-sdk/binaries
 # Download the latest zombienet image
 RUN wget https://github.com/paritytech/zombienet/releases/download/v1.3.127/zombienet-linux-x64 \
     && chmod +x zombienet-linux-x64
+
+RUN wget https://github.com/paritytech/polkadot-sdk/releases/download/polkadot-stable2412-4/polkadot \
+    && chmod +x polkadot
+
+
+# Copy the configuration file
+COPY config.toml /usr/src/app/polkadot-sdk/binaries/config.toml
 
 ENV BIND_INTERFACE=0.0.0.0
 
