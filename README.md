@@ -52,6 +52,25 @@ cd binaries
 ### App interaction
 For now, you can interact with the pallet using the following link: [Polkadot.js Explorer](https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9920#/explorer). Later, interaction through a web app will also be possible.
 
+### Indexer
+
+To run the indexer, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/decenzio/stick.git
+   ```
+2. **Navigate to the project directory**:
+   ```bash
+   cd stick
+   ```
+3. **Start the services using Docker**:
+   ```bash
+   docker compose up
+   ```
+
+Once the Docker containers are running, your indexer should be up and operational. For more information, visit our [Stick repository](https://github.com/decenzio/stick).
+
 ## Testing 
 
 ### Manual
