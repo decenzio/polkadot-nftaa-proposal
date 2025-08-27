@@ -22,7 +22,7 @@ RUN rustup component add rust-src --toolchain nightly
 WORKDIR /usr/src/app
 
 # Clone the repository
-RUN git clone https://github.com/decenzio/polkadot-sdk.git --depth 1 --branch 1.0.1 --recurse-submodules
+RUN git clone https://github.com/decenzio/polkadot-sdk.git --depth 1 --branch 1.0.2 --recurse-submodules
 
 # Configure Cargo to use Git CLI
 RUN mkdir -p ~/.cargo && echo "[net]\ngit-fetch-with-cli = true" > ~/.cargo/config
@@ -39,12 +39,11 @@ RUN cargo build --release -p parachain-template-node
 WORKDIR /usr/src/app/polkadot-sdk/binaries
 
 # Download the latest zombienet image
-RUN wget https://github.com/paritytech/zombienet/releases/download/v1.3.127/zombienet-linux-x64 \
+RUN wget https://github.com/paritytech/zombienet/releases/download/v1.3.128/zombienet-linux-x64 \
     && chmod +x zombienet-linux-x64
 
 RUN wget https://github.com/paritytech/polkadot-sdk/releases/download/polkadot-stable2412-4/polkadot \
     && chmod +x polkadot
-
 
 # Copy the configuration file
 COPY config.toml /usr/src/app/polkadot-sdk/binaries/config.toml
