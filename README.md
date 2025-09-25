@@ -6,7 +6,9 @@ For more information, as well as details on the required runtime configuration, 
 
 ## How to run?
 
-### Docker
+### Polkadot-sdk Node
+
+#### Docker
 For dockerized version you need to build image first using:
 
 ```sh
@@ -19,7 +21,7 @@ And than run zombienet instance with:
 docker run --platform linux/amd64 -p 9910-9913:9910-9913 -p 9920-9921:9920-9921 --rm -it polkadot-sdk-image:latest
 ```
 
-### Local development
+#### Local
 
 Alternatively for local development we recommend download our fork of polkadot-sdk
 
@@ -49,10 +51,10 @@ cd binaries
 ./zombienet -p native -c 1 spawn config.toml
 ```
 
-### App interaction
-For now, you can interact with the pallet using the following link: [Polkadot.js Explorer](https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9920#/explorer). Later, interaction through a web app will also be possible.
+### Indexer and FE
+For now, you can interact with the pallet using the following link: [Polkadot.js Explorer](https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9920#/explorer).
 
-### Indexer
+#### Indexer
 
 To run the indexer, follow these steps:
 
@@ -71,7 +73,7 @@ To run the indexer, follow these steps:
 
 Once the Docker containers are running, your indexer should be up and operational. For more information, visit our [Stick repository](https://github.com/decenzio/stick).
 
-### Kodadot Frontend
+#### Kodadot Frontend
 
 To run the frontend, follow these steps:
 
@@ -94,9 +96,12 @@ To run the frontend, follow these steps:
    ```bash
    pnpm dev
    ```
+Once the server is running, your FE should be up and operational. For more information, visit our [Kodadot repository](https://github.com/decenzio/nft-gallery).
+
+## Testing
 
 ### Manual
-Manual testing can currently be performed by directly calling pallet methods following the procedure outlined in the [App Interaction section](#app-interaction).
+Manual testing can currently be performed by directly calling pallet methods following the procedure outlined in the [Indexer and FE](#indexer-and-fe).
 
 Here is an example of the basic flow:
 1. Call `create` to create an NFTAA collection (similar to creating a standard NFT collection).
