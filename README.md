@@ -71,7 +71,29 @@ To run the indexer, follow these steps:
 
 Once the Docker containers are running, your indexer should be up and operational. For more information, visit our [Stick repository](https://github.com/decenzio/stick).
 
-## Testing 
+### Kodadot Frontend
+
+To run the frontend, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/decenzio/nft-gallery.git
+   ```
+
+2. **Navigate to the project directory**:
+   ```bash
+   cd nft-gallery
+   ```
+   
+3. **Install dependencies**:
+   ```bash
+   pnpm install
+   ```
+   
+4. **Start the development server**:
+   ```bash
+   pnpm dev
+   ```
 
 ### Manual
 Manual testing can currently be performed by directly calling pallet methods following the procedure outlined in the [App Interaction section](#app-interaction).
