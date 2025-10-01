@@ -112,6 +112,8 @@ Here is an example of the basic flow:
 6. Transfer the NFTAA via `transfer` (similar to transferring a standard NFT) to a new account. Then try step 4 from the old account; you should encounter an error.
 7. Switch to the new owner of the NFTAA and retry step 4. This should work without any errors.
 
+> Testing video showcase [here](https://youtu.be/WVCoaLYoxes)
+
 ### Run Automatic Tests
 
 <img width="684" alt="image" src="testing/nftaa-pallet-test-cargo.png"/>
