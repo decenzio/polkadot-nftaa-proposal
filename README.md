@@ -86,24 +86,30 @@ To run the frontend, follow these steps:
    ```bash
    cd nft-gallery
    ```
+
+3. **Copy the environment file**:
+   ```bash
+   cp .env.example .env
+   ```
+   Now you can edit the .env file with your own configuration values.
    
-3. **Run docker**:
+4. **Run docker**:
    ```bash
    docker compose up
    ```
    
 Or run local:
 
-3. **Install dependencies**:
+4. **Install dependencies**:
    ```bash
    pnpm install
    ```
    
-4. **Start the development server**:
+5. **Start the development server**:
    ```bash
    pnpm dev
    ```
-Once the server is running, your FE should be up and operational. For more information, visit our [Kodadot repository](https://github.com/decenzio/nft-gallery).
+Once the server is running, your FE should be up and operational (http://localhost:9090/). For more information, visit our [Kodadot repository](https://github.com/decenzio/nft-gallery).
 
 ## Testing
 
