@@ -87,6 +87,13 @@ To run the frontend, follow these steps:
    cd nft-gallery
    ```
    
+3. **Run docker**:
+   ```bash
+   docker compose up
+   ```
+   
+Or run local:
+
 3. **Install dependencies**:
    ```bash
    pnpm install
