@@ -1,48 +1,34 @@
-[settings]
-# Keep metrics-based verification on, and point at local loopback inside the container
-node_verifier = "Metric"
-local_ip = "127.0.0.1"
-
 [relaychain]
+
 default_command = "./polkadot"
 default_args = ["-lparachain=debug"]
+
 chain = "rococo-local"
 
 [[relaychain.nodes]]
 name = "alice"
 rpc_port = 9910
-prometheus_port = 9615
-args = ["--prometheus-external", "--prometheus-port", "9615"]
 
 [[relaychain.nodes]]
 name = "bob"
 rpc_port = 9911
-prometheus_port = 9616
-args = ["--prometheus-external", "--prometheus-port", "9616"]
 
 [[relaychain.nodes]]
 name = "charlie"
 rpc_port = 9912
-prometheus_port = 9617
-args = ["--prometheus-external", "--prometheus-port", "9617"]
 
 [[relaychain.nodes]]
 name = "dave"
 rpc_port = 9913
-prometheus_port = 9618
-args = ["--prometheus-external", "--prometheus-port", "9618"]
 
 [[parachains]]
 id = 1000
 cumulus_based = true
 
-  [parachains.collator]
-  name = "parachain-A-1000-collator01"
-  command = "../target/release/parachain-template-node"
-  args = [
+[parachains.collator]
+name = "parachain-A-1000-collator01"
+command = "../target/release/parachain-template-node"
+args = [
     "-lparachain=debug,xcm::process-message=trace,xcm::execute=trace,xcm::process=trace",
-    "--prometheus-external",
-    "--prometheus-port", "9620"
-  ]
-  rpc_port = 9920
-  prometheus_port = 9620
+]
+rpc_port = 9920

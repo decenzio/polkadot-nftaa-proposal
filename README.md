@@ -9,65 +9,50 @@ For more information, as well as details on the required runtime configuration, 
 ### Polkadot-sdk Node
 
 #### Docker
+For dockerized version you need to build image first using:
 
-To run our Polkadot-SDK, follow these steps:
+```sh
+docker build --platform linux/amd64 -t polkadot-sdk-image:latest .
+```
 
-1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/decenzio/polkadot-nftaa-proposal.git --recurse-submodules
-   ```
+And than run zombienet instance with:
 
-2. **You need to build image first using**:
-   ```sh
-   docker build --platform linux/amd64 -t polkadot-sdk-image:latest .
-   ```
-   or (use no cache)
-   ```sh
-   docker build --platform linux/amd64 --no-cache -t polkadot-sdk-image:latest .
-   ```
+```sh
+docker run --platform linux/amd64 -p 9910-9913:9910-9913 -p 9920-9921:9920-9921 --rm -it polkadot-sdk-image:latest
+```
 
-3. **And than run zombienet instance with**:
-   ```sh
-   docker run --platform linux/amd64 -p 9910-9913:9910-9913 -p 9920-9921:9920-9921 -p 9615-9620:9615-9620 --rm -it polkadot-sdk-image:latest
-   ```
+#### Local
 
-#### Local run (withou docker)
-<details>
-   <summary>Local tutorial</summary>
-   Alternatively for local development we recommend download our fork of polkadot-sdk
-   
-      ```sh
-      git clone https://github.com/decenzio/polkadot-sdk.git --branch dev --recurse-submodules
-      ```
-   
-   Inside folder `binaries` download [zombienet](https://github.com/paritytech/zombienet/releases) instance. Then add execution rights:
-      ```sh
-      cd binaries
-      chmod +x ./zombienet
-      ```
-   
-   Then you need to build relay node:
-      ```sh
-      cargo b -r -p polkadot
-      ```
-   
-   And parachain template:
-      ```sh
-      cargo build --release -p parachain-template-node
-      ```
-   
-   After that we can launch nodes with zombienet:
-      ```sh
-      cd binaries
-      ./zombienet -p native -c 1 spawn config.toml
-      ```
-</details>
+Alternatively for local development we recommend download our fork of polkadot-sdk
 
-For now, you can interact with the pallet using the following link: [Polkadot.js Explorer](https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9920#/explorer).
+```sh
+git clone https://github.com/decenzio/polkadot-sdk.git --branch dev --recurse-submodules
+```
+
+Inside folder `binaries` download [zombienet](https://github.com/paritytech/zombienet/releases) instance. Then add execution rights:
+```sh
+cd binaries
+chmod +x ./zombienet
+```
+
+Then you need to build relay node:
+```sh
+cargo b -r -p polkadot
+```
+
+And parachain template:
+```sh
+cargo build --release -p parachain-template-node
+```
+
+After that we can launch nodes with zombienet:
+```sh
+cd binaries
+./zombienet -p native -c 1 spawn config.toml
+```
 
 ### Indexer and FE
-
-When Polkadot-sdk Node is running we can run Indexer and then FE.
+For now, you can interact with the pallet using the following link: [Polkadot.js Explorer](https://polkadot.js.org/apps/?rpc=ws://127.0.0.1:9920#/explorer).
 
 #### Indexer
 
@@ -111,22 +96,19 @@ To run the frontend, follow these steps:
 4. **Run docker**:
    ```bash
    docker compose up
-    ```
+   ```
+   
+Or run local:
 
-<details>
-  <summary>Or run local</summary>
-
-  Install dependencies:
-
-  ```bash
-  pnpm install
-  ```
-  Start the development server:
-  ```bash
-  pnpm dev
-  ```
-</details>
-
+4. **Install dependencies**:
+   ```bash
+   pnpm install
+   ```
+   
+5. **Start the development server**:
+   ```bash
+   pnpm dev
+   ```
 Once the server is running, your FE should be up and operational (http://localhost:9090/). For more information, visit our [Kodadot repository](https://github.com/decenzio/nft-gallery).
 
 ## Testing
@@ -152,18 +134,18 @@ Here is an example of the basic flow:
 
 To run automatic tests, follow these steps:
 
-1. Check your Rust version:
+0. Check your Rust version:
    ```sh
    rustc --version           
    rustc 1.84.0 (9fc6b4312 2025-01-07)
    ```
 
-2. Clone our `polkadot-sdk` fork along with its submodules:
+1. Clone our `polkadot-sdk` fork along with its submodules:
    ```sh
    git clone https://github.com/decenzio/polkadot-sdk.git --branch dev --recurse-submodules
    ```
 
-3. Navigate to the `polkadot-sdk` folder and run:
+2. Navigate to the `polkadot-sdk` folder and run:
    ```sh
    cargo test -p pallet-nftaa
    ```
