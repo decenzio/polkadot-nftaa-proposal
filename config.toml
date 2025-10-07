@@ -1,6 +1,9 @@
 [settings]
 node_verifier = "Metric"
 local_ip = "127.0.0.1"
+timeout = 240000            # 4 min total
+node_spawn_timeout = 60000 # 1 min per node
+
 
 [relaychain]
 default_command = "./polkadot"
