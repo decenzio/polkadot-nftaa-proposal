@@ -31,6 +31,13 @@ To run our Polkadot-SDK, follow these steps:
    docker run --platform linux/amd64 -p 9910-9913:9910-9913 -p 9920-9921:9920-9921 -p 9615-9620:9615-9620 --rm -it polkadot-sdk-image:latest
    ```
 
+
+   <details>
+      <summary>If you see an error like “Error fetching metrics from: http://127.0.0.1:9620/metrics” wait a few seconds. The whole network should start up, and you should see something like this in the console (open for image)</summary>
+      <img width="943" height="1079" alt="image" src="https://github.com/user-attachments/assets/7827d006-a90d-4fb8-ac25-204d719a36bb" />
+
+   </details>
+
 #### Local run (withou docker)
 <details>
    <summary>Local tutorial</summary>
