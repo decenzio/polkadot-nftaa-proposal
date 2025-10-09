@@ -17,7 +17,12 @@ To run our Polkadot-SDK, follow these steps:
    git clone https://github.com/decenzio/polkadot-nftaa-proposal.git --recurse-submodules
    ```
 
-2. **You need to build image first using**:
+2. **Navigate to the project directory**:
+   ```bash
+   cd polkadot-nftaa-proposal
+   ```
+
+3. **You need to build image first using**:
    ```sh
    docker build --platform linux/amd64 -t polkadot-sdk-image:latest .
    ```
@@ -26,7 +31,7 @@ To run our Polkadot-SDK, follow these steps:
    docker build --platform linux/amd64 --no-cache -t polkadot-sdk-image:latest .
    ```
 
-3. **And than run zombienet instance with**:
+4. **And than run zombienet instance with**:
    ```sh
    docker run --platform linux/amd64 -p 9910-9913:9910-9913 -p 9920-9921:9920-9921 -p 9615-9620:9615-9620 --rm -it polkadot-sdk-image:latest
    ```
